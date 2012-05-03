@@ -6,16 +6,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Main Flow Page</title>
+<title>Subflow page</title>
 </head>
 <body>
-  <h1>Main Flow Page</h1>
+  <h1>Subflow Page</h1>
   <hr>
   <form action="${flowExecutionUrl}" method="post">
     <p>Paragraph 1</p>
     <p>Paragraph 2</p>
     <p>
-      <button type="submit" name="_eventId_continue">To subflow</button>
+      <button type="submit" name="_eventId_continue">End Subflow</button>
     </p>
   </form>
 </body>

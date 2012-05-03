@@ -9,13 +9,20 @@
 
 	<var name="houseForm" class="org.springframework.webflow.issues.form.HouseForm" />
 
-	<on-start>
+	<!--<on-start>
 		<evaluate expression="houseForm.loadHouse()" result="flowScope.house" />
-	</on-start>
+	</on-start>-->
 
 	<view-state id="view">
-		<transition on="continue" to="done" />
+		<transition on="continue" to="subflow">
+			<evaluate expression="houseForm.loadHouse(1)" result="flowScope.house" />
+		</transition>
+		<transition on="finish" to="done" />
 	</view-state>
-
+	
+	<subflow-state id="subflow" subflow="subflow">
+		<transition on="done" to="done" />
+	</subflow-state>
+	
 	<end-state id="done" view="externalRedirect:contextRelative:/" />
 </flow>

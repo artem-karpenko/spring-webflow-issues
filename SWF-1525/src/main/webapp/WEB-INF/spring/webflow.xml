@@ -27,7 +27,7 @@
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
 	<!-- Installs a listener to inject flow scoped persistence context -->
-	<bean id="jpaFlowExecutionListener" class="org.springframework.webflow.persistence.JpaFlowExecutionListener">
+	<bean id="jpaFlowExecutionListener" class="org.springframework.webflow.issues.jpa.FixedJpaFlowExecutionListener">
 		<constructor-arg ref="entityManagerFactory" />
     	<constructor-arg ref="transactionManager" />
 	</bean>
